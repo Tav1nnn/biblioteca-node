@@ -1,5 +1,6 @@
 class Livro{
-	constructor(name, author, pages, publisher, year){
+	constructor( id,name, author, pages, publisher, year){
+		this.id = id;
 		this.name = name;
 		this.author = author;
 		this.pages = pages;
@@ -8,4 +9,4 @@ class Livro{
 	}
 }
 
-export default new Livro();
+export default Livro;
