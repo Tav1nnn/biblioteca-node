@@ -7,5 +7,5 @@ class Livro{
 		this.year = year;
 	}
 }
-let livro = new Livro('teste', 'author', 13, 'sla', 10);
-console.log(livro);
+
+export default new Livro();
