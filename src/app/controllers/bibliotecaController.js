@@ -14,7 +14,11 @@ class BibliotecaController{
 	}
 
 	show(req,res){
+		const name = req.params.name;
+		const livro = arrayBiblioteca.find(item => item.name === name);
+		const status  = livro ? 200 : 400;
 
+		return res.status(status).json(livro);
 	}
 
 	create(req,res){
