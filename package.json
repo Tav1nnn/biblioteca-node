@@ -1,0 +1,17 @@
+{
+  "name": "biblioteca-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  }
+}
