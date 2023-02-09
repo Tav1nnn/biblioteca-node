@@ -38,6 +38,25 @@ class BibliotecaController{
 	}
 
 	update(req,res){
+		const nome = req.params.name;
+		
+		const {name, author, pages, publisher, year} = req.body;
+		
+		const index = arrayBiblioteca.findIndex(item => item.name === nome);
+		console.log(index);
+		console.log(arrayBiblioteca[index]);
+		const status = index>= 0? 200:400;
+
+		if(status===200){
+			const id = arrayBiblioteca[index].id;
+			const livro = new Livro(id, name, author, pages, publisher, year);
+			
+			arrayBiblioteca[index] = livro;
+
+			return res.status(status).json(arrayBiblioteca[index]);
+		}
+
+		return res.status(status).json({'error':'usuario não identificado'});
 
 	}
 
