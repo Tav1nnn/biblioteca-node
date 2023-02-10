@@ -61,7 +61,16 @@ class BibliotecaController{
 	}
 
 	destroy(req,res){
+		const nome  = req.params.name;
+		const index = arrayBiblioteca.findIndex(item => item.name === nome);
+		const status = index >= 0 ? 200:400;
 
+		if(status==400){
+			return res.status(status).json({'error':'esse livro não existe'});
+		}else{
+			arrayBiblioteca.splice(index,1);
+			return res.status(status).json({'sucesso':`o livro ${nome} foi apagado`});
+		}
 	}
 }
 

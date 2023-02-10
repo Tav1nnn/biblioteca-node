@@ -7,5 +7,6 @@ routes.get('/listar',biblioteca.index);
 routes.get('/listar/:name', biblioteca.show);
 routes.post('/cadastro', biblioteca.create);
 routes.put('/editar/:name', biblioteca.update);
+routes.delete('/excluir/:name',biblioteca.destroy);
 
 export default routes;
